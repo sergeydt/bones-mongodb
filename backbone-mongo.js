@@ -45,7 +45,8 @@ module.exports = function (config) {
         var success = options.success || function () {};
         var error = options.error || function () {};
         var json = toJSON(model);
-        json._id = model.id;
+        json._id = model._id || model.id;
+        json.id = model._id || model.id;
         var url = getUrl(model);
         var con = db.getConnection();
         var params = url.match(/\/api\/([^\/]+)\/?(.*)/);
@@ -127,3 +128,4 @@ module.exports = function (config) {
         sync: sync
     };
 };
+
