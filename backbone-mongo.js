@@ -83,6 +83,7 @@ module.exports = function (config) {
                     if (err) return error(err);
                     if (!dbModel) {
                         // create
+                        //console.log('---------CREATE', json);
                         collection.insert(json, function (err, dbModel) {
                             if (err) return error(err);
                             success(dbModel);
@@ -93,7 +94,9 @@ module.exports = function (config) {
                             _id: model_id
                         }, json, function (err) {
                             if (err) return error(err);
-                            success(dbModel);
+                            //console.log('---------UPDATE', json, dbModel);
+                            //success(dbModel);
+                            success(json);
                         });
                     }
                 });
