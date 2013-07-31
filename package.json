@@ -34,7 +34,7 @@
   "_nodeVersion": "v0.6.15",
   "_defaultsLoaded": true,
   "dist": {
-    "shasum": "ab96414806c1c1866bdd6d10555baad9aad5ef1f"
+    "shasum": "6e7a283328f551bcdc63f7dd0a5e69797da423eb"
   },
   "_from": "bones-mongodb@https://github.com/sergeydt/bones-mongodb/tarball/master"
 }

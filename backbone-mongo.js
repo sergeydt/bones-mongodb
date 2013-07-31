@@ -42,6 +42,9 @@ module.exports = function (config) {
     // Backbone sync method.
     var sync = function (method, model, options) {
         var filter = options.filter || {};
+        var sort = options.sort || {};
+        var skip = options.skip || null; 
+        var limit = options.limit || null;
         var success = options.success || function () {};
         var error = options.error || function () {};
         var json = toJSON(model);
@@ -65,7 +68,7 @@ module.exports = function (config) {
                         success(dbModel);
                     })
                 } else {
-                    collection.find(filter).toArray(function (err, models) {
+                    collection.find(filter).sort(sort).skip(skip).limit(limit).toArray(function (err, models) {
                         if (err) return error(err);
                         success(models);
                     })
